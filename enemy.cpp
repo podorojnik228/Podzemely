@@ -1,18 +1,10 @@
 #include "enemy.h"
 #include "character.h"
+#include "ui.h"
 
-#include <random>
-#include <chrono>
 #include <vector>
 
 using namespace std;
-
-static mt19937 rng((unsigned)chrono::steady_clock::now().time_since_epoch().count());
-static int rnd(int a, int b)
-{
-    uniform_int_distribution<int> d(a, b);
-    return d(rng);
-}
 
 static vector<EnemyTemplate> templates = 
 {

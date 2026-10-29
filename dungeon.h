@@ -2,5 +2,3 @@
 #include "character.h"
 
 void dungeon(Character& player);
-
-void event();

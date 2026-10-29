@@ -3,8 +3,19 @@
 #include "character.h"
 
 #include <iostream>
+#include <random>
+#include <chrono>
 
 using namespace std;
+
+///
+static mt19937 rng((unsigned)chrono::steady_clock::now().time_since_epoch().count());
+int rnd(int a, int b)
+{
+    uniform_int_distribution<int> d(a, b);
+    return d(rng);
+}
+///
 
 void wait()
 {

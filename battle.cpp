@@ -2,18 +2,11 @@
 #include "ui.h"
 
 #include <iostream>
-#include <random>
-#include <chrono>
 
 using namespace std;
 
 //рандом
-static mt19937 rng((unsigned)chrono::steady_clock::now().time_since_epoch().count());
-static int rnd(int a, int b)
-{
-    uniform_int_distribution<int> d(a, b);
-    return d(rng);
-}
+
 
 
 void battle(Character& player, Enemy& enemy)
@@ -26,6 +19,7 @@ void battle(Character& player, Enemy& enemy)
         cout << "1. Атака\n"
                 "2. Бежать\n";
         cin >> choice;
+        cin.ignore();
 
         //Атака//
         if (choice == 1) 
@@ -126,5 +120,4 @@ void battle(Character& player, Enemy& enemy)
             player.endurance -= 1;
         }
     }
-    wait();
 }
